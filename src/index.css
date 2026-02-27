@@ -26,10 +26,20 @@
 
 @layer base {
   body {
-    @apply w-full h-screen font-nunito;
+    @apply w-full h-screen font-nunito bg-Grey-50;
   }
 
   #root {
-    @apply w-full h-full;
+    @apply w-full h-full flex flex-col items-center space-y-15;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .region-buttons button {
+    @apply text-start focus:outline-0;
   }
 }
