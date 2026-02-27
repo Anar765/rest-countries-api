@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000&display=swap');
+@import "tailwindcss";
 
 @theme {
   /* Dark Mode Elements */
@@ -22,4 +22,14 @@
 
   /* Nunito Sans Font */
   --font-nunito: "Nunito Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply w-full h-screen font-nunito;
+  }
+
+  #root {
+    @apply w-full h-full;
+  }
 }
