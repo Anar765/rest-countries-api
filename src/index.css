@@ -42,4 +42,8 @@
   .region-buttons button {
     @apply text-start focus:outline-0;
   }
+
+  .country-data span {
+    @apply font-bold text-lg text-Blue-900
+  }
 }
