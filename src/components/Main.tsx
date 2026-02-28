@@ -1,37 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import CountrySearchFilter from "./CountrySearchFilter";
 import CountryCard from "./CountryCard";
-import type { Country } from "../types/country.type";
+import { AppContext } from "../App";
 
 const Main = () => {
 
-  const [countriesData, setCountriesData] = useState<Country[]>([]);
   const [searchCountry, setSearchCountry] = useState("");
   const [filterByRegion, setFilterByRegion] = useState("");
 
-  useEffect(() => {
-    const fetchCountriesData = async() => {
-      try {
-        const response = await fetch('/data.json');
-
-        if(!response.ok) {
-          throw new Error("Fetching failed!");
-        }
-
-        const data = await response.json();
-
-        setCountriesData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-
-    fetchCountriesData();
-  }, []);
-
-  useEffect(() => {
-    console.log(countriesData)
-  }, [countriesData]);
+  const { countriesData } = useContext(AppContext);
 
   return (
     <main className="w-full max-w-400 flex flex-col gap-12">
@@ -41,6 +18,7 @@ const Main = () => {
           {countriesData.filter(country => country.name.toLowerCase().startsWith(searchCountry.toLowerCase()) && country.region.includes(filterByRegion)).map((country, _) => (
             <CountryCard
               key={country.alpha3Code}
+              alpha3Code={country.alpha3Code}
               name={country.name}
               population={country.population}
               region={country.region}
