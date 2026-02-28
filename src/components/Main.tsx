@@ -6,6 +6,7 @@ import type { Country } from "../types/country.type";
 const Main = () => {
 
   const [countriesData, setCountriesData] = useState<Country[]>([]);
+  const [searchCountry, setSearchCountry] = useState("");
 
   useEffect(() => {
     const fetchCountriesData = async() => {
@@ -33,10 +34,10 @@ const Main = () => {
 
   return (
     <main className="w-full max-w-400 flex flex-col gap-12">
-        <CountrySearchFilter />
+        <CountrySearchFilter setSearchCountry={setSearchCountry} />
 
         <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-rows-none gap-15">
-          {countriesData.map((country, _) => (
+          {countriesData.filter((country => country.name.toLowerCase().startsWith(searchCountry.toLowerCase()))).map((country, _) => (
             <CountryCard
               key={country.alpha3Code}
               name={country.name}

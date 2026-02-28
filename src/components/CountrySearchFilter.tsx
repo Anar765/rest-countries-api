@@ -2,7 +2,7 @@ import { IonIcon } from "@ionic/react";
 import { searchSharp, chevronDownSharp } from "ionicons/icons";
 import { useState } from "react";
 
-const CountrySearchFilter = () => {
+const CountrySearchFilter = ({ setSearchCountry }: { setSearchCountry: (state: string) => void }) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -11,7 +11,13 @@ const CountrySearchFilter = () => {
             <label htmlFor="searchCountry" className="w-110 bg-white flex items-center gap-4 px-6 border border-transparent rounded has-focus:outline-1 has-focus:border-white">
                 <IonIcon icon={searchSharp} className="w-6 h-6 text-Blue-900"></IonIcon>
 
-                <input type="search" name="searchCountry" id="searchCountry" placeholder="Search for a country..." className="w-full py-4 focus:border-0 focus:outline-0" />
+                <input
+                    type="search"
+                    name="searchCountry"
+                    id="searchCountry"
+                    placeholder="Search for a country..."
+                    onChange={(e) => setSearchCountry(e.currentTarget.value)}
+                    className="w-full py-4 focus:border-0 focus:outline-0" />
             </label>
 
             <div className="relative">
