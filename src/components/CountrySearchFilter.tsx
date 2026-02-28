@@ -2,7 +2,7 @@ import { IonIcon } from "@ionic/react";
 import { searchSharp, chevronDownSharp } from "ionicons/icons";
 import { useState } from "react";
 
-const CountrySearchFilter = ({ setSearchCountry }: { setSearchCountry: (state: string) => void }) => {
+const CountrySearchFilter = ({ setSearchCountry, setFilterByRegion }: { setSearchCountry: (state: string) => void, setFilterByRegion: (state: string) => void }) => {
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -26,11 +26,12 @@ const CountrySearchFilter = ({ setSearchCountry }: { setSearchCountry: (state: s
                     <IonIcon icon={chevronDownSharp} className={`${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-all`} />
                 </button>
                 {isDropdownOpen && <div className="region-buttons absolute bg-white flex flex-col w-full mt-1 rounded-lg gap-2 p-4">
-                    <button>Africa</button>
-                    <button>America</button>
-                    <button>Asia</button>
-                    <button>Europe</button>
-                    <button>Ocenia</button>
+                    <button onClick={() => setFilterByRegion("")}>All</button>
+                    <button onClick={() => setFilterByRegion("Africa")}>Africa</button>
+                    <button onClick={() => setFilterByRegion("Americas")}>America</button>
+                    <button onClick={() => setFilterByRegion("Asia")}>Asia</button>
+                    <button onClick={() => setFilterByRegion("Europe")}>Europe</button>
+                    <button onClick={() => setFilterByRegion("Oceania")}>Oceania</button>
                 </div>}
             </div>
         </div>
