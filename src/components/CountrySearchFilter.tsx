@@ -7,13 +7,13 @@ const CountrySearchFilter = ({ setSearchCountry, setFilterByRegion }: { setSearc
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     return (
-        <div className="flex items-center justify-between">
-            <label htmlFor="searchCountry" className="shadow-md dark:bg-Blue-900 dark:shadow-Grey-900 w-110 bg-white flex items-center gap-4 px-6 border border-transparent rounded has-focus:outline-1 has-focus:border-white">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-10 w-full">
+            <label htmlFor="searchCountry" className="shadow-md dark:bg-Blue-900 dark:shadow-Grey-900 w-full md:max-w-110 bg-white flex items-center gap-4 px-6 border border-transparent rounded has-focus:outline-1 has-focus:border-white">
                 <IonIcon icon={searchSharp} className="w-6 h-6 text-Blue-900 dark:text-white"></IonIcon>
 
                 <input
                     type="search"
-                    name="searchCountry"
+                    name="searchCountry"    
                     id="searchCountry"
                     placeholder="Search for a country..."
                     onChange={(e) => setSearchCountry(e.currentTarget.value)}

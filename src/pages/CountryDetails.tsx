@@ -14,24 +14,24 @@ const CountryDetails = () => {
     return (
         <>
             <Header />
-            <div className="flex flex-col items-start gap-20 w-full max-w-400">
+            <div className="flex flex-col items-start gap-15 md:gap-20 w-full max-w-400 px-6 pb-10">
                 <Link to="/" className="bg-white dark:bg-Blue-900 shadow-[0px_0px_5px_3px_hsla(0,0%,50%,0.25)] dark:shadow-Grey-950 py-2 pl-8 pr-10 flex items-center gap-2 rounded">
                     <IonIcon icon={arrowBackOutline} />
                     Back
                 </Link>
 
-                <div className="flex items-center gap-30">
-                    <img src={country.flags.svg} alt="" className="max-w-175" />
-                    <div>
+                <div className="w-full flex flex-col min-[1440px]:flex-row items-center justify-center gap-10 md:gap-30">
+                    <img src={country.flags.svg} alt="" className="w-full md:max-w-175" />
+                    <div className="md:max-w-175">
                         <h2 className="text-4xl font-bold">{country.name}</h2>
 
-                        <div className="country-data mt-10 mb-20 grid grid-flow-col grid-rows-5 gap-x-20 gap-y-1 w-max">
+                        <div className="country-data mt-10 mb-10 md:mb-20 grid md:grid-flow-col md:grid-rows-5 gap-x-20 gap-y-1 w-max">
                             <p><span>Native Name:</span> {country.nativeName}</p>
                             <p><span>Population:</span> {country.population.toLocaleString()}</p>
                             <p><span>Region:</span> {country.region}</p>
                             <p><span>Sub region:</span> {country.subregion}</p>
                             <p><span>Capital:</span> {country.capital}</p>
-                            <p><span>Top Level Domain:</span> {country.topLevelDomain.join('/')}</p>
+                            <p className="mt-10 md:mt-0"><span>Top Level Domain:</span> {country.topLevelDomain.join('/')}</p>
                             <p><span>Currencies:</span> {country.currencies[0].name}</p>
                             <p><span>Languages:</span> {country.languages.map((language: any) => language.name).join(', ')}</p>
                         </div>

@@ -11,10 +11,10 @@ const Main = () => {
   const { countriesData } = useContext(AppContext);
 
   return (
-    <main className="w-full max-w-400 flex flex-col gap-12 pb-20">
+    <main className="w-full max-w-400 min-[2240px]:max-w-500 px-4 md:px-6 flex flex-col gap-12 pb-10 md:pb-20">
         <CountrySearchFilter setSearchCountry={setSearchCountry} setFilterByRegion={setFilterByRegion} />
 
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-rows-none gap-15">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] grid-rows-none gap-15 px-2 md:px-0">
           {countriesData.filter(country => country.name.toLowerCase().startsWith(searchCountry.toLowerCase()) && country.region.includes(filterByRegion)).map((country, _) => (
             <CountryCard
               key={country.alpha3Code}
