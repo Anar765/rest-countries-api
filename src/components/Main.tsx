@@ -11,7 +11,7 @@ const Main = () => {
   const { countriesData } = useContext(AppContext);
 
   return (
-    <main className="w-full max-w-400 flex flex-col gap-12">
+    <main className="w-full max-w-400 flex flex-col gap-12 pb-20">
         <CountrySearchFilter setSearchCountry={setSearchCountry} setFilterByRegion={setFilterByRegion} />
 
         <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-rows-none gap-15">

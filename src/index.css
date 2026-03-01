@@ -26,7 +26,7 @@
 
 @layer base {
   body {
-    @apply w-full h-screen font-nunito bg-Grey-50;
+    @apply w-full h-screen font-nunito bg-Grey-50 text-Grey-950;
   }
 
   #root {

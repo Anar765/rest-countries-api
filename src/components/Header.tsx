@@ -14,7 +14,7 @@ const Header = () => {
                 <button onClick={() => setIsDarkMode(prevState => !prevState)} className="text-lg flex items-center gap-3">
                     {/* Icon */}
                     <IonIcon icon={isDarkMode ? moonOutline : sunnyOutline} className="w-5 h-5" />
-                    <p>{isDarkMode ? "Dark" : "Light"} Mode</p>
+                    <p className="font-semibold">{isDarkMode ? "Dark" : "Light"} Mode</p>
                 </button>
             </div>
         </header>

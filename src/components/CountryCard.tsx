@@ -14,7 +14,7 @@ const CountryCard = ({ alpha3Code, name, population, region, capital, flags }: C
                     />
                 </div>
                 <div className='p-5'>
-                    <h3 className="text-2xl font-bold text-Blue-950">{name}</h3>
+                    <h3 className="text-2xl font-bold text-Grey-950">{name}</h3>
                     <div className="country-data mt-3 space-y-1">
                         <p><span>Population:</span> {population.toLocaleString()}</p>
                         <p><span>Region:</span> {region}</p>
