@@ -8,8 +8,8 @@ const CountrySearchFilter = ({ setSearchCountry, setFilterByRegion }: { setSearc
 
     return (
         <div className="flex items-center justify-between">
-            <label htmlFor="searchCountry" className="w-110 bg-white flex items-center gap-4 px-6 border border-transparent rounded has-focus:outline-1 has-focus:border-white">
-                <IonIcon icon={searchSharp} className="w-6 h-6 text-Blue-900"></IonIcon>
+            <label htmlFor="searchCountry" className="shadow-md dark:bg-Blue-900 dark:shadow-Grey-900 w-110 bg-white flex items-center gap-4 px-6 border border-transparent rounded has-focus:outline-1 has-focus:border-white">
+                <IonIcon icon={searchSharp} className="w-6 h-6 text-Blue-900 dark:text-white"></IonIcon>
 
                 <input
                     type="search"
@@ -21,11 +21,11 @@ const CountrySearchFilter = ({ setSearchCountry, setFilterByRegion }: { setSearc
             </label>
 
             <div className="relative">
-                <button role="select" onClick={() => setIsDropdownOpen(prevState => !prevState)} className="w-50 flex items-center justify-between p-4 bg-white rounded-lg">
+                <button role="select" onClick={() => setIsDropdownOpen(prevState => !prevState)} className="w-50 flex items-center justify-between p-4 bg-white dark:bg-Blue-900 rounded-lg">
                     <p>Filter by Region</p>
                     <IonIcon icon={chevronDownSharp} className={`${isDropdownOpen ? "rotate-180" : "rotate-0"} transition-all`} />
                 </button>
-                {isDropdownOpen && <div className="region-buttons absolute bg-white flex flex-col w-full mt-1 rounded-lg gap-2 p-4">
+                {isDropdownOpen && <div className="region-buttons absolute bg-white dark:bg-Blue-900 flex flex-col w-full mt-1 rounded-lg gap-2 p-4">
                     <button onClick={() => setFilterByRegion("")}>All</button>
                     <button onClick={() => setFilterByRegion("Africa")}>Africa</button>
                     <button onClick={() => setFilterByRegion("Americas")}>America</button>

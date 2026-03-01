@@ -15,7 +15,7 @@ const CountryDetails = () => {
         <>
             <Header />
             <div className="flex flex-col items-start gap-20 w-full max-w-400">
-                <Link to="/" className="bg-white shadow-[0px_0px_5px_3px_hsla(0,0%,50%,0.25)] py-2 pl-8 pr-10 flex items-center gap-2 rounded">
+                <Link to="/" className="bg-white dark:bg-Blue-900 shadow-[0px_0px_5px_3px_hsla(0,0%,50%,0.25)] dark:shadow-Grey-950 py-2 pl-8 pr-10 flex items-center gap-2 rounded">
                     <IonIcon icon={arrowBackOutline} />
                     Back
                 </Link>
@@ -46,7 +46,7 @@ const CountryDetails = () => {
                                         
                                         // Return the name (or the code as a fallback)
                                         return (
-                                            <span key={borderCode} className="px-4 py-1 bg-white shadow-md rounded text-sm border border-gray-100">
+                                            <span key={borderCode} className="px-4 py-1 bg-white shadow-md rounded text-sm shadow-Grey-400 dark:bg-Blue-900 dark:shadow-Grey-950">
                                                 {borderCountry ? borderCountry.name : borderCode}
                                             </span>
                                         );

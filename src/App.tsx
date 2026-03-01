@@ -40,6 +40,14 @@ const App = () => {
     fetchCountriesData();
   }, []);
 
+  useEffect(() => {
+    if(isDarkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [isDarkMode]);
+
   return (
     <AppContext.Provider value={{isDarkMode, setIsDarkMode, countriesData}}>
       <BrowserRouter>

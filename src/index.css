@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Dark Mode Elements */
   --color-Blue-900: hsl(209, 23%, 22%);
@@ -26,7 +28,7 @@
 
 @layer base {
   body {
-    @apply w-full h-screen font-nunito bg-Grey-50 text-Grey-950;
+    @apply w-full h-screen font-nunito bg-Grey-50 text-Grey-950 dark:bg-Blue-950 dark:text-white transition-all;
   }
 
   #root {
@@ -44,6 +46,6 @@
   }
 
   .country-data span {
-    @apply font-bold text-lg text-Blue-900
+    @apply font-bold text-lg text-Blue-900 dark:text-white
   }
 }
