@@ -4,12 +4,17 @@ import { Link, useParams } from "react-router-dom";
 import { AppContext } from "../App";
 import { IonIcon } from "@ionic/react";
 import { arrowBackOutline } from "ionicons/icons";
+import NotFound from "./NotFound";
 
 const CountryDetails = () => {
 
     const { countriesData } = useContext(AppContext);
     const { alpha3Code } = useParams();
     const country: any = countriesData.find((country => country.alpha3Code === alpha3Code));
+
+    if(!country) {
+        return <NotFound />
+    }
 
     return (
         <>

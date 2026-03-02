@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CountryDetails from "./pages/CountryDetails";
 import type { Country } from "./types/country.type";
+import NotFound from "./pages/NotFound";
 
 interface AppContext {
   isDarkMode: boolean,
@@ -54,6 +55,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/country/:alpha3Code" element={<CountryDetails />} />
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </AppContext.Provider>
