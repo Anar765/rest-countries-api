@@ -18,7 +18,11 @@ export const AppContext = createContext<AppContext>({
 });
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("isDarkMode");
+    return savedTheme !== null ? JSON.parse(savedTheme) : false;
+  });
+
   const [countriesData, setCountriesData] = useState<Country[]>([]);
 
   useEffect(() => {
@@ -42,6 +46,9 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+
+    localStorage.setItem("isDarkMode", JSON.stringify(isDarkMode));
+
     if(isDarkMode) {
       document.body.classList.add("dark");
     } else {
