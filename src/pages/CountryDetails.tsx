@@ -9,7 +9,7 @@ const CountryDetails = () => {
 
     const { countriesData } = useContext(AppContext);
     const { alpha3Code } = useParams();
-    const country: any = countriesData.filter((country => country.alpha3Code === alpha3Code))[0];
+    const country: any = countriesData.find((country => country.alpha3Code === alpha3Code));
 
     return (
         <>
