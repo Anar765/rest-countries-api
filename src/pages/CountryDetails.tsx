@@ -26,14 +26,14 @@ const CountryDetails = () => {
                         <h2 className="text-4xl font-bold">{country.name}</h2>
 
                         <div className="country-data mt-10 mb-10 md:mb-20 grid md:grid-flow-col md:grid-rows-5 gap-x-20 gap-y-1 w-max">
-                            <p><span>Native Name:</span> {country.nativeName}</p>
-                            <p><span>Population:</span> {country.population.toLocaleString()}</p>
-                            <p><span>Region:</span> {country.region}</p>
-                            <p><span>Sub region:</span> {country.subregion}</p>
-                            <p><span>Capital:</span> {country.capital}</p>
-                            <p className="mt-10 md:mt-0"><span>Top Level Domain:</span> {country.topLevelDomain.join('/')}</p>
-                            <p><span>Currencies:</span> {country.currencies[0].name}</p>
-                            <p><span>Languages:</span> {country.languages.map((language: any) => language.name).join(', ')}</p>
+                            <p><span className="font-bold">Native Name:</span> {country.nativeName || "N/A"}</p>
+                            <p><span className="font-bold">Population:</span> {country.population?.toLocaleString() || "0"}</p>
+                            <p><span className="font-bold">Region:</span> {country.region || "N/A"}</p>
+                            <p><span className="font-bold">Sub region:</span> {country.subregion || "N/A"}</p>
+                            <p><span className="font-bold">Capital:</span> {country.capital || "N/A"}</p>
+                            <p className="mt-10 md:mt-0"><span className="font-bold">Top Level Domain:</span> {country.topLevelDomain?.join(', ') || "N/A"}</p>
+                            <p><span className="font-bold">Currencies:</span> {country.currencies?.[0]?.name || "None"}</p>
+                            <p><span className="font-bold">Languages:</span> {country.languages ? country.languages.map((l: any) => l.name).join(', ') : "N/A"}</p>
                         </div>
 
                         <div>
