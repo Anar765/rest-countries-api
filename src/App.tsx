@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import CountryDetails from "./pages/CountryDetails";
 import type { Country } from "./types/country.type";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/react";
 
 interface AppContext {
   isDarkMode: boolean,
@@ -65,6 +66,7 @@ const App = () => {
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </AppContext.Provider>
   )
 }
