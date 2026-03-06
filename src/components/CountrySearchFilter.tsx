@@ -32,6 +32,7 @@ const CountrySearchFilter = ({ setSearchCountry, setFilterByRegion }: { setSearc
                     <button onClick={() => setFilterByRegion("Asia")}>Asia</button>
                     <button onClick={() => setFilterByRegion("Europe")}>Europe</button>
                     <button onClick={() => setFilterByRegion("Oceania")}>Oceania</button>
+                    <button onClick={() => setFilterByRegion("Polar")}>Polar</button>
                 </div>}
             </div>
         </div>
